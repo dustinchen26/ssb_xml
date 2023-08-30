@@ -13,8 +13,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ssb_xml</title>
+    <title>gscn_calculator</title>
     <style>
+	
         p {
             margin-top: 0.1em;
             margin-bottom: 0.1em;
@@ -24,6 +25,7 @@
     table {
       border-collapse: collapse;
     }
+	
     th, td {
       border: 1px solid black;
       padding: 8px;
@@ -41,15 +43,10 @@
       white-space: nowrap;
     }
 	
-        /* Style to display tables inline */
-        .inline-table {
-            display: inline-block;
-            margin-right: 20px; /* Add some space between tables */
-        }
-
 /* freq to arfcn 樣式 */		
         body {
-            font-family: Arial, sans-serif;
+            font-family: Roboto, sans-serif;
+            font-size: 14px; /* 設置較小的字體大小 */			
         }
         h1, h4, label, input, button, p {
             margin: 0;
@@ -67,8 +64,27 @@
             margin-left: 10px; /* 調整輸出結果的間距 */
         }			
         #result {
-			font-size: 15px; /* 调整为你想要的字体大小，单位可以是px、em、rem等 */
+			font-size: 13.5px; /* 调整为你想要的字体大小，单位可以是px、em、rem等 */
         }
+
+    /* Style to display tables inline */
+    .inline-table {
+			font-size: 12px; /* 設置較小的字體大小 */
+            display: inline-block;
+            margin-right: 10px; /* Add some space between tables */
+    }
+		
+    .table-container {
+			margin-left: 100px; /* move the table right */	
+			font-size: 12px; /* 設置較小的字體大小 */
+            display: inline-block;
+            margin-right: 12px; /* Add some space between tables */	  
+    }		
+
+    ul {
+        margin-top: 0; /* 去除上边距 */
+    }
+		
     </style>	
 </head>
 <body>
@@ -88,7 +104,7 @@
                     return;
                 }
 
-                result1.innerHTML = "arfcn = " + arfcn_calculated.toFixed(2);
+                result1.innerHTML = "arfcn = " + arfcn_calculated.toFixed(0);
             } else {
                 result1.innerHTML = "Invalid input. Please enter a valid value.";
             }
@@ -108,7 +124,7 @@
                     return;
                 }
 
-                result2.innerHTML = "Freq = " + freq_calculated.toFixed(2) + " Hz";
+                result2.innerHTML = "Freq = " + freq_calculated.toFixed(0) + " Hz";
             } else {
                 result2.innerHTML = "Invalid input. Please enter a valid value.";
             }
@@ -513,45 +529,56 @@ console.log("nrBandIndex=", nrBandIndex);
         }
     </script>
 
-    <h1> ssb_xml </h1>
+    <h1>gscn_calculator</h1>
 	<style>
 		.author-info {
 			display: inline;
 			margin-right: 10px;
+			
 		}
 	</style>
 	<p class="author-info">Author: Dustin_Chen</p>
 	<p class="author-info">Email: <a href="mailto:Dustin_Chen@compal.com">Dustin_Chen@compal.com</a></p>
 	<p class="author-info">or <a href="mailto:chuhpsdustin@gmail.com">chuhpsdustin@gmail.com</a></p>
-<br>
 
-<!--  
-<p>
-    earfcn to freq convert :
-    <a href="https://5g-tools.com/5g-nr-arfcn-calculator/" target="_blank" rel="noopener noreferrer">https://5g-tools.com/5g-nr-arfcn-calculator/</a>
-</p>
--->
-    <h4>● freq to arfcn</h4>
-    <label for="freq1">freq(Hz):</label>
-    <input type="text" id="freq1">
-    <button onclick="calculateFreqToARFCN()">Calculate</button>
-    <p id="result1"></p>
-<br> <!-- 空行 -->
-    <h4>● arfcn to freq</h4>
-    <label for="arfcn">arfcn:</label>
-    <input type="text" id="arfcn">
-    <button onclick="calculateARFCNToFreq()">Calculate</button>
-    <p id="result2"></p>
-<br> <!-- 空行 -->
-	<p><b> ● [Purpose] Input (band, carrierBw(RB), freq_low, freq_high), then it will calculate the valid (gscn /absFreqPointA /absArfcnPointA /absFreqSsb /absArfcnSsb /dlEarfcn /nDlCenterFreq /Kssb /offsetToPointA ) </b></p>	
-	<p> > n41 => freq range [2496000, 2690000] </p>	
-	<p> > n48 => freq range [3550000, 3700000] </p>	
-	<p> > n78 => freq range [3300000, 3800000] </p>	
-	<p> > n79 => freq range [4400000, 5000000] </p>
-	<p> > (RadiSys code):For n79, CORESET0 use 38.213 Table 13-6 Index 4. </p> 
-	<p> > (RadiSys code):For others, if BW>=48, CORESET0 use Table 13-4 Index 10. // Try to have 48 RB size for CS-0 to avoid allocation failure for SIB1 during SSB(20RBs) overlap</p> 
-	<p> > (RadiSys code):For others, if BW<48, CORESET0 use Table Index 0. // if 48 RB is not available, get the best fit CS0  </p> 
-  
+  <ul>
+    <li>
+      <strong>freq to arfcn</strong>
+      <ul>
+		<li>	  
+			<label for="freq1">enter freq(Hz):</label>
+			<input type="text" id="freq1">
+			<button onclick="calculateFreqToARFCN()">Calculate</button>
+			<p id="result1"></p>
+		</li>	
+	  </ul>
+    </li>
+    <li>
+      <strong>arfcn to freq</strong>
+      <ul>
+		<li>	  
+			<label for="arfcn">enter arfcn:</label>
+			<input type="text" id="arfcn">
+			<button onclick="calculateARFCNToFreq()">Calculate</button>
+			<p id="result2"></p>
+		</li>	
+	  </ul>
+    </li>
+
+    <li>
+      <strong>Please input (band, carrierBw(RB), freq_low, freq_high), then it will calculate gscn, PointA, Ssb, CenterFreq, Kssb, offsetToPointA </strong>
+      <ul>
+        <li>n41 => freq range [2496000, 2690000]</li>
+        <li>n48 => freq range [3550000, 3700000]</li>
+        <li>n78 => freq range [3300000, 3800000]</li>
+        <li>n79 => freq range [4400000, 5000000] <span style="color: blue;">→ (RadiSys code):For n79, CORESET0 use 38.213 Table 13-6 Index 4</span></li>
+      <ul>
+        <li><span style="color: blue;">(RadiSys code): if BW>=48, CORESET0 use Table 13-4 Index 10. // Try to have 48 RB size for CS-0 to avoid allocation failure for SIB1 during SSB(20RBs) overlap</span></li>
+        <li>(RadiSys code): if BW<48, CORESET0 use Table Index 0. // if 48 RB is not available, get the best fit CS0</li>
+      </ul>
+	  </ul>
+    </li>
+	
 	<!--  
 	<p> ● carrierBw(RB): SCS30 
 	100M(273RB), 
@@ -568,17 +595,20 @@ console.log("nrBandIndex=", nrBandIndex);
 	5M=11RB</p> 
 	-->
 
+  <div class="table-container">
+    <table>
+
     <!-- 1st table -->
     <div class="inline-table">
-	<p><b>● 38.101-1 Table 5.3.2-1 SCS=30</b></p>	
+	<p><b>38.101-1 Table 5.3.2-1 SCS=30</b></p>	
   <table>
     <tr>
       <th>BW(MHz)</th>
       <th>carrierBw(RB)</th>
     </tr>
     <tr>
-      <td>100</td>
-      <td>273</td>
+      <td style="color: blue;">100</td>
+      <td style="color: blue;">273</td>
     </tr>
     <tr>
       <td>90</td>
@@ -625,7 +655,7 @@ console.log("nrBandIndex=", nrBandIndex);
 	
     <!-- 2nd table -->
     <div class="inline-table">
-	<p><b>● 38.213 Table 13-4: {30,30} miniBW 5 or 10 MHz</b></p>	
+	<p><b>&nbsp;&nbsp;&nbsp;38.213 Table 13-4: {30,30} miniBW 5 or 10 MHz</b></p>	
   <table>
     <tr>
       <th>Index</th>
@@ -683,9 +713,9 @@ console.log("nrBandIndex=", nrBandIndex);
       <td>4</td>
     </tr>
     <tr>
-      <td>10</td>
-      <td>48</td>
-      <td>12</td>
+      <td style="color: blue;">10</td>
+      <td style="color: blue;">48</td>
+      <td style="color: blue;">12</td>
     </tr>
     <tr>
       <td>11</td>
@@ -717,7 +747,7 @@ console.log("nrBandIndex=", nrBandIndex);
 	
     <!-- 3rd table -->
     <div class="inline-table">
-	<p><b>● 38.213 Table 13-6: {30,30} miniBW 40 MHz</b></p>	
+	<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;38.213 Table 13-6: {30,30} miniBW 40 MHz</b></p>	
   <table>
     <tr>
       <th>Index</th>
@@ -745,9 +775,9 @@ console.log("nrBandIndex=", nrBandIndex);
       <td>4</td>
     </tr>
     <tr>
-      <td>4</td>
-      <td>48</td>
-      <td>0</td>
+      <td style="color: blue;">4</td>
+      <td style="color: blue;">48</td>
+      <td style="color: blue;">0</td>
     </tr>
     <tr>
       <td>5</td>
@@ -776,10 +806,14 @@ console.log("nrBandIndex=", nrBandIndex);
     </tr>
   </table>
     </div>
+	
+    </table>
+  </div>
 
-
-	<p><b>● Please input</b></p>	
-	<p> ex:(band, carrierBw(RB), freq_low, freq_high)=(78, 273, 3603840, 3603840) / (79, 273, 4849860, 4849860) / (41, 273, 2565750, 2565750) </p>	
+    <li>
+      <strong>Please input</strong>
+      <ul>
+        <li>ex:(band, carrierBw(RB), freq_low, freq_high)=(78, 273, 3603840, 3603840) / (79, 273, 4849860, 4849860) / (41, 273, 2565750, 2565750)</li>
     <label for="band">band:</label>
     <input type="number" id="band" name="band" min="0" max="100000000"><br>
 	
@@ -796,5 +830,8 @@ console.log("nrBandIndex=", nrBandIndex);
     <button onclick="calculate()">Calculate</button>
     <br>
     <div id="result"></div>
+	  </ul>
+    </li>
+
 </body>
 </html>
