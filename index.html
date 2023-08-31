@@ -296,7 +296,7 @@
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nDlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nUlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlBw&gt;" +nDlBw+ "&lt;/nDlBw&gt;<br>";
-												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br>";
+												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br><br>";
 
 													
 													}
@@ -381,7 +381,7 @@
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nDlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nUlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlBw&gt;" +nDlBw+ "&lt;/nDlBw&gt;<br>";
-												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br>";
+												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br><br>";
 
 												
 												}
@@ -459,7 +459,7 @@
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nDlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlCenterFreq&gt;" +nDlCenterFreq+ "&lt;/nUlCenterFreq&gt;<br>";
 												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nDlBw&gt;" +nDlBw+ "&lt;/nDlBw&gt;<br>";
-												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br>";
+												result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nUlBw&gt;" +nUlBw+ "&lt;/nUlBw&gt;<br><br>";
 												
 												}
 										
@@ -547,7 +547,7 @@ console.log("nrBandIndex=", nrBandIndex);
       <ul>
 		<li>	  
 			<label for="freq1">enter freq(Hz):</label>
-			<input type="text" id="freq1">
+			<input type="text" id="freq1" value="3603840">
 			<button onclick="calculateFreqToARFCN()">Calculate</button>
 			<p id="result1"></p>
 		</li>	
@@ -558,7 +558,7 @@ console.log("nrBandIndex=", nrBandIndex);
       <ul>
 		<li>	  
 			<label for="arfcn">enter arfcn:</label>
-			<input type="text" id="arfcn">
+			<input type="text" id="arfcn" value="640256">
 			<button onclick="calculateARFCNToFreq()">Calculate</button>
 			<p id="result2"></p>
 		</li>	
@@ -815,17 +815,17 @@ console.log("nrBandIndex=", nrBandIndex);
       <ul>
         <li>ex:(band, carrierBw(RB), freq_low, freq_high)=(78, 273, 3603840, 3603840) / (79, 273, 4849860, 4849860) / (41, 273, 2565750, 2565750)</li>
     <label for="band">band:</label>
-    <input type="number" id="band" name="band" min="0" max="100000000"><br>
+    <input type="number" id="band" value="78" name="band" min="0" max="100000000"><br>
 	
     <label for="carrierBw">carrierBw(RB):</label>
-    <input type="number" id="carrierBw" name="carrierBw" min="0" max="1000"><br>
+    <input type="number" id="carrierBw" value="273" name="carrierBw" min="0" max="1000" ><br>
 	
  
     <label for="freq_low">freq_low:</label>
-    <input type="number" id="freq_low" name="freq_low" min="0" max="100000000"><br>
+    <input type="number" id="freq_low" value="3603840" name="freq_low" min="0" max="100000000"><br>
 	
 	<label for="freq_high">freq_high:</label>
-    <input type="number" id="freq_high" name="freq_high" min="0" max="100000000"><br>
+    <input type="number" id="freq_high" value="3603840" name="freq_high" min="0" max="100000000"><br>
 
     <button onclick="calculate()">Calculate</button>
     <br>
