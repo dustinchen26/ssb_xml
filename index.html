@@ -555,7 +555,7 @@ console.log("nrBandIndex=", nrBandIndex);
       <strong>freq to arfcn</strong>
       <ul>
 		<li>	  
-			<label for="freq1">enter freq(Hz):</label>
+			<label for="freq1">enter freq(kHz):</label>
 			<input type="text" id="freq1" value="3603840">
 			<button onclick="calculateFreqToARFCN()">Calculate</button>
 			<p id="result1"></p>
@@ -842,10 +842,10 @@ console.log("nrBandIndex=", nrBandIndex);
     <input type="number" id="carrierBw" value="273" name="carrierBw" min="0" max="1000" ><br>
 	
  
-    <label for="freq_low">freq_low:</label>
+    <label for="freq_low">freq_low(kHz):</label>
     <input type="number" id="freq_low" value="3603840" name="freq_low" min="0" max="100000000"><br>
 	
-	<label for="freq_high">freq_high:</label>
+	<label for="freq_high">freq_high(kHz):</label>
     <input type="number" id="freq_high" value="3603840" name="freq_high" min="0" max="100000000"><br>
 
     <button onclick="calculate()">Calculate</button>
