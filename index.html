@@ -37,7 +37,7 @@
 
     body {
       font-family: Roboto, sans-serif;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     h1,
@@ -48,11 +48,6 @@
     p {
       margin: 0;
       padding: 0;
-    }
-
-    button {
-      display: inline-block;
-      margin-top: -5px;
     }
 
     input {
@@ -74,7 +69,7 @@
 
     /* Style to display tables inline */
     .inline-table {
-      font-size: 12px;
+      font-size: 13px;
       /* 設置較小的字體大小 */
       display: inline-block;
       margin-right: 10px;
@@ -82,7 +77,7 @@
     }
 
     .table-container {
-      margin-left: 100px;
+      margin-left: 130px;
       /* move the table right */
       font-size: 12px;
       /* 設置較小的字體大小 */
@@ -770,7 +765,7 @@
       </ul>
     </li>
 -->
-  <ul>
+<ul>
     <li>
       <strong>Spec 38.101-1 </strong>
       <ul>
@@ -781,11 +776,13 @@
             38.213
             Table 13-6 Index 4</span></li>
         <ul>
-          <li><span style="color: blue;">(RadiSys code): if BW>=48, CORESET0 use Table 13-4 Index 10. // Try to have 48
-              RB
-              size for CS-0 to avoid allocation failure for SIB1 during SSB(20RBs) overlap</span></li>
-          <li>(RadiSys code): if BW<48, CORESET0 use Table Index 0. // if 48 RB is not available, get the best fit
-              CS0</li> </ul> </ul> </li> </ul> <!-- <p> ● carrierBw(RB): SCS30
+          <li><span style="color: blue;">(RadiSys code): if BW>=48, CORESET0 use Table 13-4 Index 10. // Try to have 48 RB size for CS-0 to avoid allocation failure for SIB1 during SSB(20RBs) overlap</span></li>
+          <li>(RadiSys code): if BW<48, CORESET0 use Table Index 0. // if 48 RB is not available, get the best fit CS0</li> 
+		</ul> 
+	  </ul> 
+	</li> 
+</ul> 
+			  <!-- <p> ● carrierBw(RB): SCS30
               100M(273RB),
               90M(245RB),
               80M(217RB),
@@ -802,7 +799,6 @@
 
               <div class="table-container">
                 <table>
-
                   <!-- 1st table -->
                   <div class="inline-table">
                     <p><b>38.101-1 Table 5.3.2-1 SCS=30</b></p>
